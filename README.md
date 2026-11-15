@@ -8,7 +8,7 @@
 
 **Created by ENTRAIOT Labs**, a unit of **Entraiot Solutions**, Chennai, India
 
-[![Live demo](https://img.shields.io/badge/Live%20demo-Visit-0a7d5a?style=for-the-badge)](https://entraiot-labs.vercel.app)
+[![Live demo](https://img.shields.io/badge/Live%20demo-Visit-0a7d5a?style=for-the-badge)](https://entralabs.vercel.app)
 [![Website](https://img.shields.io/badge/entraiot.com-Company-1f2937?style=for-the-badge)](https://entraiot.com)
 
 ![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)
@@ -31,6 +31,8 @@
 - [Why ENTRAIOT Labs](#why-entraiot-labs)
 - [Features](#features)
 - [The labs](#the-labs)
+- [What's new from ENTRAIOT Labs](#whats-new-from-entraiot-labs)
+- [Bench log](#bench-log)
 - [Architecture](#architecture)
   - [Tech stack](#tech-stack)
   - [System overview](#system-overview)
@@ -45,6 +47,7 @@
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
 - [Configuration](#configuration)
+- [Design system](#design-system)
 - [White-labelling](#white-labelling)
 - [Deploy to Vercel](#deploy-to-vercel)
 - [Quality checks](#quality-checks)
@@ -65,11 +68,12 @@ It is built for the **ESP32-S3 DevKitC-1 (N16R8)**, works on a phone, works offl
 
 | | Feature | What it does |
 |---|---|---|
+| 🌡️ | **Sensors labs** | New from ENTRAIOT Labs: temperature, humidity, pressure, altitude and tilt on one I2C bus, with sliders that stand in for the room. |
 | 🧪 | **Browser simulators** | Every lab runs in the browser first. Type into the simulated serial monitor and the board replies the way the real firmware would. |
 | 📖 | **Code reader** | Opens the actual firmware a lab flashes. **Tour** goes a few lines at a time with guess-first quizzes, **Story** follows the program from `setup()` through every call, **Explore** explains any line you tap. |
 | 📑 | **Datasheet for makers** | The ESP32-S3 in plain terms: chip overview with a 3D dive to the die, every pin, all 32 peripheral blocks, memory, clocks and power modes, each fact citing Espressif's reference. |
 | 🧩 | **Meet the board** | The DevKitC-1 in interactive 3D (Three.js) with callouts that light up each part and list the labs using it. |
-| 📋 | **Bench log** | What is flashed on the board now and every command recorded, from plain JSON you can update without rebuilding. |
+| 📋 | **Bench log** | ENTRAIOT's own bench diary: what is on the board now and every build, check and flash, from plain JSON you can update without rebuilding. |
 | ✅ | **Progress** | Ticks, last lesson and chosen variants are saved in the browser. No login. |
 | 🔩 | **Parts library** | 42 isometric drawings of every component on the bench, coloured from design tokens. |
 | 🌍 | **12 languages** | Including right-to-left Arabic and Persian. Share any page in a language with `?lang=fr`. |
@@ -100,6 +104,68 @@ It is built for the **ESP32-S3 DevKitC-1 (N16R8)**, works on a phone, works offl
 | **Bluetooth LE** | B1 → B8 | Advertising, pairing, a phone web app, a keyboard, music control |
 | **Sound** | S1 → S8 | Loudness meter, clap control, recorder, spectrum, speaker, voice effects |
 | **Sensors** | E1 Climate · E2 Air pressure · E3 Motion · E4 Weather station | AHT20, BMP280 and MPU6050 on one I2C bus, with live simulators *(new from ENTRAIOT Labs)* |
+
+---
+
+## What's new from ENTRAIOT Labs
+
+| Area | Change |
+|---|---|
+| **Brand** | ENTRAIOT name across the header, home title, browser tabs and footer ("Created by ENTRAIOT Labs"), with all branding in one file for white-labelling |
+| **Sensors track** | Four new labs, E1 to E4, with simulators and an I2C bus explainer (details below) |
+| **Look** | New indigo-violet ENTRAIOT palette, navy dark mode, soft brand glow, raised cards and rounder corners |
+| **Font** | Google Sans Flex for text and Google Sans Code for code, both open-source variable fonts |
+| **Bench** | A fresh ENTRAIOT bench log and status, replacing the original diary |
+| **Deploy** | Builds on Vercel straight from GitHub; the separate firmware repo is optional |
+
+### Sensors track
+
+All three sensors share one I2C bus: **SDA on GPIO 1, SCL on GPIO 2**, powered from **3V3**.
+
+| Lab | Sensor | Address | What you build |
+|---|---|---|---|
+| **E1 Climate** | AHT20 | `0x38` | Temperature, humidity and dew point |
+| **E2 Air pressure** | BMP280 | `0x76` | Pressure in hPa and altitude from the barometric formula |
+| **E3 Motion** | MPU6050 | `0x68` | Pitch and roll from gravity, shown as a bubble level |
+| **E4 Weather station** | All three + 1.9″ screen | — | A live station with a comfort word for the room |
+
+```mermaid
+flowchart LR
+  esp["ESP32-S3<br/>GPIO1 SDA · GPIO2 SCL"] --- bus(("I2C bus<br/>3V3 · GND · SDA · SCL"))
+  bus --- aht["AHT20<br/>0x38"]
+  bus --- bmp["BMP280<br/>0x76"]
+  bus --- mpu["MPU6050<br/>0x68"]
+```
+
+The sensor maths (raw bytes to °C, %, hPa, metres and degrees) lives in `src/labs/sensors/sensor-model.ts` as pure, unit-tested functions. The simulators are ready; the board firmware for E1 to E4 is the next step.
+
+---
+
+## Bench log
+
+The **Bench** page is ENTRAIOT's own bench diary, read from two plain files in `public/data/`. No rebuild is needed to update them.
+
+| File | What it holds |
+|---|---|
+| `bench-status.json` | "On the bench now": board, what is flashed, live site, team, and fact tables (sensor addresses, deployment) |
+| `bench-log.json` | Every build, check and flash, numbered 1, 2, 3… with the command, why it ran, its output and the result |
+
+Each log entry has this shape:
+
+```json
+{
+  "n": 4,
+  "types": ["flash"],
+  "title": "Lab 01 Hello flashed",
+  "where": "Laptop · board on USB",
+  "cmd": "uv run pio run -d labs/01-hello -e 01-hello -t upload -t monitor",
+  "why": "First program on the ENTRAIOT bench board.",
+  "out": "…what the serial monitor printed…",
+  "result": "Board shows its identity card and a rainbow LED."
+}
+```
+
+`types` can be `install`, `build`, `read`, `reset`, `flash`, `failed` or `observe`. Numbers must run 1 to n with no gaps; a test checks it. Only record what really happened.
 
 ---
 
@@ -310,7 +376,7 @@ A new deploy never reloads mid-lesson: the learner sees a **Reload** prompt inst
 
 ```mermaid
 flowchart LR
-  dev["Developer push"] --> gh["GitHub<br/>entrabuild/entraiot-labs-web"]
+  dev["Developer push"] --> gh["GitHub<br/>entrabuild/Entraiot-Labs"]
   gh --> ci["GitHub Actions CI<br/>typecheck · lint · test · build"]
   gh --> vercel["Vercel build<br/>pnpm install → pnpm build"]
   vercel --> cdn["Vercel edge CDN<br/>security + cache headers"]
@@ -322,7 +388,7 @@ flowchart LR
 ## Project structure
 
 ```text
-entraiot-labs-web/
+Entraiot-Labs/
 ├── src/
 │   ├── app/             # Router, layout (header, footer credit), route screens, error pages
 │   ├── config/          # env.ts (build settings) · brand.ts (white-label settings)
@@ -354,8 +420,8 @@ entraiot-labs-web/
 ## Getting started
 
 ```bash
-git clone https://github.com/entrabuild/entraiot-labs-web.git
-cd entraiot-labs-web
+git clone https://github.com/entrabuild/Entraiot-Labs.git
+cd Entraiot-Labs
 corepack enable            # or: npm i -g pnpm@11.10.0
 pnpm install
 pnpm dev                   # http://localhost:5180
@@ -382,6 +448,25 @@ Copy `.env.example` to `.env` and adjust if needed. All settings are optional.
 
 ---
 
+## Design system
+
+All colours, fonts and shapes are design tokens in `src/styles/tokens.css`. Components never use raw colours.
+
+| Token | Light | Dark | Used for |
+|---|---|---|---|
+| `--copper` (brand accent) | `#4f3df0` | `#9d8cff` | Links, highlights, focus rings, active states |
+| `--bg` | `#f3f5fb` | `#070b1a` | Page background |
+| `--surface` | `#ffffff` | `#0f1630` | Cards and panels |
+| `--ink` | `#0e1530` | `#e8ecfa` | Text |
+| `--hotspot` | `#0aa5c2` | `#3dd6f0` | Second glow colour, 3D hotspots |
+| `--font-display` / `--font-body` | Google Sans Flex | | Headings and text |
+| `--font-mono` | Google Sans Code | | Code, commands, serial monitor |
+| `--radius-s / m / l` | 8 / 14 / 20 px | | Corners |
+
+Light and dark follow the device setting, or the choice in **Settings**.
+
+---
+
 ## White-labelling
 
 All branding sits in **one file**, `src/config/brand.ts`:
@@ -404,7 +489,7 @@ The browser tab title and header subtitle are in `src/locales/<language>/common.
 ```bash
 # 1. Push the repo to GitHub
 git push -u origin main
-# 2. In Vercel: Add New Project → import entrabuild/entraiot-labs-web
+# 2. In Vercel: Add New Project → import entrabuild/Entraiot-Labs
 # 3. Settings → General → Node.js Version → 24.x
 # 4. Deploy (vercel.json already sets install, build and output)
 ```
