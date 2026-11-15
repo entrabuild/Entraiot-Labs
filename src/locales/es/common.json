@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} Creado por <maker>{{maker}}</maker> · {{company}}"
   },
   "titles": {
-    "labs": "Laboratorios · Guía de banco ESP32-S3",
-    "lesson": "{{id}} · {{title}} · Guía de banco ESP32-S3",
-    "code": "Código {{id}} · {{title}} · Guía de banco ESP32-S3",
-    "log": "Registro del banco · Guía de banco ESP32-S3",
-    "parts": "Biblioteca de piezas · Guía de banco ESP32-S3",
-    "settings": "Ajustes · Guía de banco ESP32-S3",
-    "chip": "{{page}} · Hoja de datos · Guía de banco ESP32-S3"
+    "labs": "Laboratorios · Guía de banco ESP32-S3 · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · Guía de banco ESP32-S3 · ENTRAIOT",
+    "code": "Código {{id}} · {{title}} · Guía de banco ESP32-S3 · ENTRAIOT",
+    "log": "Registro del banco · Guía de banco ESP32-S3 · ENTRAIOT",
+    "parts": "Biblioteca de piezas · Guía de banco ESP32-S3 · ENTRAIOT",
+    "settings": "Ajustes · Guía de banco ESP32-S3 · ENTRAIOT",
+    "chip": "{{page}} · Hoja de datos · Guía de banco ESP32-S3 · ENTRAIOT"
   },
   "routeError": {
     "code": "Error",

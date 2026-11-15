@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} <maker>{{maker}}</maker> tarafından oluşturuldu · {{company}}"
   },
   "titles": {
-    "labs": "Deneyler · ESP32-S3 Tezgâh Rehberi",
-    "lesson": "{{id}} · {{title}} · ESP32-S3 Tezgâh Rehberi",
-    "code": "{{id}} kodu · {{title}} · ESP32-S3 Tezgâh Rehberi",
-    "log": "Tezgâh günlüğü · ESP32-S3 Tezgâh Rehberi",
-    "parts": "Parça kütüphanesi · ESP32-S3 Tezgâh Rehberi",
-    "settings": "Ayarlar · ESP32-S3 Tezgâh Rehberi",
-    "chip": "{{page}} · Veri sayfası · ESP32-S3 Tezgâh Rehberi"
+    "labs": "Deneyler · ESP32-S3 Tezgâh Rehberi · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · ESP32-S3 Tezgâh Rehberi · ENTRAIOT",
+    "code": "{{id}} kodu · {{title}} · ESP32-S3 Tezgâh Rehberi · ENTRAIOT",
+    "log": "Tezgâh günlüğü · ESP32-S3 Tezgâh Rehberi · ENTRAIOT",
+    "parts": "Parça kütüphanesi · ESP32-S3 Tezgâh Rehberi · ENTRAIOT",
+    "settings": "Ayarlar · ESP32-S3 Tezgâh Rehberi · ENTRAIOT",
+    "chip": "{{page}} · Veri sayfası · ESP32-S3 Tezgâh Rehberi · ENTRAIOT"
   },
   "routeError": {
     "code": "Hata",

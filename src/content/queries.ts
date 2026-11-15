@@ -13,6 +13,7 @@ const LOADERS: Partial<Record<TrackId, LessonLoader>> = {
   wifi: () => import("./lessons/wifi").then((m) => m.wifiLessons),
   rfid: () => import("./lessons/rfid").then((m) => m.rfidLessons),
   ble: () => import("./lessons/ble").then((m) => m.bleLessons),
+  sensors: () => import("./lessons/sensors").then((m) => m.sensorsLessons),
   sound: () => import("./lessons/sound").then((m) => m.soundLessons),
 };
 

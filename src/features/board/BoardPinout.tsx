@@ -13,7 +13,7 @@ const PY0 = 96;
 const PSTEP = 22;
 const TAG_W = 50;
 const TAG_H = 18;
-const LABEL_CHAR_W = 6.3; // IBM Plex Mono at 10.5px
+const LABEL_CHAR_W = 6.3; // Google Sans Code at 10.5px
 
 const pinPos = (side: PinSide, i: number) => ({
   x: side === "L" ? BX + 12 : BX + BW - 12,

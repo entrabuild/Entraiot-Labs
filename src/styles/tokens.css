@@ -7,19 +7,19 @@
   color-scheme: light;
 
   /* Surfaces and text: a datasheet page */
-  --bg: #eef1f0;
-  --surface: #f8faf9;
-  --ink: #18221f;
-  --muted: #56645f;
-  --line: #c9d2ce;
-  --copper: #b0601f;
-  --copper-soft: #f3dfcd;
+  --bg: #f3f5fb;
+  --surface: #ffffff;
+  --ink: #0e1530;
+  --muted: #586079;
+  --line: #d9deeb;
+  --copper: #4f3df0;
+  --copper-soft: #e7e4ff;
 
   /* The board */
-  --pcb: #14201c;
-  --pcb-edge: #2a3a34;
+  --pcb: #0b1230;
+  --pcb-edge: #24305a;
   --silk: #e9efe9;
-  --silk-dim: #8fa39a;
+  --silk-dim: #97a0c4;
   --pad: #d4a24a;
 
   /* 3D models: drawn like an illustration, ink outlines and a soft shadow, the same in both themes */
@@ -28,7 +28,7 @@
   --metal: #c9d1d4;
   --metal-dark: #7f8a8e;
   --plastic: #2b3331;
-  --hotspot: #0d8a86;
+  --hotspot: #0aa5c2;
 
   /* The parts library (src/ui/parts): physical colours, the same in both themes */
   --part-light: #ffffff;
@@ -91,7 +91,7 @@
   --w-btn: #c2255c;
 
   /* Serial monitor */
-  --term-bg: #101614;
+  --term-bg: #0b1025;
   --term-ink: #cfe0d8;
   --term-dim: #71877d;
   --term-info: #6fd3a1;
@@ -110,7 +110,7 @@
   --snd-amp: #6b3fc0;
 
   /* Code reader: syntax colours (AA on --code-bg) and the tour spotlight */
-  --code-bg: #fbfcfb;
+  --code-bg: #fbfcff;
   --code-gutter: #5f6e69;
   --syn-keyword: #7a3fb8;
   --syn-type: #0b6b84;
@@ -120,40 +120,45 @@
   --syn-fn: #1d55a6;
   --syn-const: #a0257a;
   --syn-preproc: #95501a;
-  --spot: #f6e6d6;
-  --spot-edge: #d08a4c;
-  --lens: #e3eefc;
-  --lens-edge: #4f7fd0;
-  --term-line: #b0601f;
+  --spot: #ece9ff;
+  --spot-edge: #8577f5;
+  --lens: #e2f3fb;
+  --lens-edge: #1d8fc2;
+  --term-line: #4f3df0;
 
   /* Type */
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Google Sans Flex", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Google Sans Flex", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Google Sans Code", ui-monospace, "SF Mono", Menlo, monospace;
   /* Leading for body text; scripts with taller glyphs raise it below. */
   --leading: 1.55;
 
   /* Shape and rhythm */
-  --radius-s: 6px;
-  --radius-m: 10px;
-  --radius-l: 12px;
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 20px;
   --gutter: 16px;
   --focus-ring: 2px solid var(--copper);
+  /* ENTRAIOT look: soft lifted cards and a brand glow behind the page */
+  --shadow-card: 0 1px 2px color-mix(in oklab, var(--ink) 6%, transparent),
+    0 8px 24px -12px color-mix(in oklab, var(--ink) 18%, transparent);
+  --glow: color-mix(in oklab, var(--copper) 14%, transparent);
+  --glow-2: color-mix(in oklab, var(--hotspot) 10%, transparent);
 }
 
 /* Dark: one block, used both by the OS preference and by an explicit choice. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #0f1513;
-    --surface: #161e1b;
-    --ink: #e4ebe7;
-    --muted: #9aaba4;
-    --line: #2b3833;
-    --copper: #e39a5c;
-    --copper-soft: #3a2a1d;
-    --pcb: #0a110e;
-    --pcb-edge: #2f423a;
+    --bg: #070b1a;
+    --surface: #0f1630;
+    --ink: #e8ecfa;
+    --muted: #9aa3c0;
+    --line: #222c4d;
+    --copper: #9d8cff;
+    --copper-soft: #241f4d;
+    --pcb: #050918;
+    --pcb-edge: #2a3666;
     --ok: #5fcf8f;
     --warn: #f0b85a;
     --danger: #ff8a80;
@@ -177,35 +182,35 @@
     --sound: #ff8fcf;
     --snd-mic: #5fd3c3;
     --snd-amp: #c4a5ff;
-    --code-bg: #111816;
-    --code-gutter: #8a9c95;
+    --code-bg: #0b1126;
+    --code-gutter: #8b94b3;
     --syn-keyword: #c9a2ff;
     --syn-type: #6fd3e0;
     --syn-string: #9ad97a;
     --syn-number: #ffb26b;
-    --syn-comment: #8fa39a;
+    --syn-comment: #8f98b8;
     --syn-fn: #8ab8ff;
     --syn-const: #ff94cf;
     --syn-preproc: #e8a86f;
-    --spot: #2e2419;
-    --spot-edge: #b8783f;
-    --lens: #172540;
-    --lens-edge: #6a9be8;
-    --term-line: #e39a5c;
-    --hotspot: #4fd1c5;
+    --spot: #1d1940;
+    --spot-edge: #7a6cf0;
+    --lens: #10263a;
+    --lens-edge: #4cb8e8;
+    --term-line: #9d8cff;
+    --hotspot: #3dd6f0;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0f1513;
-  --surface: #161e1b;
-  --ink: #e4ebe7;
-  --muted: #9aaba4;
-  --line: #2b3833;
-  --copper: #e39a5c;
-  --copper-soft: #3a2a1d;
-  --pcb: #0a110e;
-  --pcb-edge: #2f423a;
+  --bg: #070b1a;
+  --surface: #0f1630;
+  --ink: #e8ecfa;
+  --muted: #9aa3c0;
+  --line: #222c4d;
+  --copper: #9d8cff;
+  --copper-soft: #241f4d;
+  --pcb: #050918;
+  --pcb-edge: #2a3666;
   --ok: #5fcf8f;
   --warn: #f0b85a;
   --danger: #ff8a80;
@@ -229,31 +234,31 @@
   --sound: #ff8fcf;
   --snd-mic: #5fd3c3;
   --snd-amp: #c4a5ff;
-  --code-bg: #111816;
-  --code-gutter: #8a9c95;
+  --code-bg: #0b1126;
+  --code-gutter: #8b94b3;
   --syn-keyword: #c9a2ff;
   --syn-type: #6fd3e0;
   --syn-string: #9ad97a;
   --syn-number: #ffb26b;
-  --syn-comment: #8fa39a;
+  --syn-comment: #8f98b8;
   --syn-fn: #8ab8ff;
   --syn-const: #ff94cf;
   --syn-preproc: #e8a86f;
-  --spot: #2e2419;
-  --spot-edge: #b8783f;
-  --lens: #172540;
-  --lens-edge: #6a9be8;
-  --term-line: #e39a5c;
-  --hotspot: #4fd1c5;
+  --spot: #1d1940;
+  --spot-edge: #7a6cf0;
+  --lens: #10263a;
+  --lens-edge: #4cb8e8;
+  --term-line: #9d8cff;
+  --hotspot: #3dd6f0;
 }
 
-/* Scripts Archivo has no glyphs for: Archivo still sets the Latin words (code terms, units), the
+/* Scripts Google Sans Flex has no glyphs for: it still sets the Latin words (code terms, units), the
    platform's own font for that script sets the rest. System fonts only, nothing to download. */
 :root:lang(zh) {
   --font-script: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-  --font-display: "Archivo", var(--font-script);
-  --font-body: "Archivo", var(--font-script);
-  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, var(--font-script);
+  --font-display: "Google Sans Flex", var(--font-script);
+  --font-body: "Google Sans Flex", var(--font-script);
+  --font-mono: "Google Sans Code", ui-monospace, "SF Mono", Menlo, var(--font-script);
   --leading: 1.75;
 }
 :root:lang(zh-Hant) {
@@ -263,16 +268,16 @@
   --font-script:
     "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", Meiryo,
     sans-serif;
-  --font-display: "Archivo", var(--font-script);
-  --font-body: "Archivo", var(--font-script);
-  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, var(--font-script);
+  --font-display: "Google Sans Flex", var(--font-script);
+  --font-body: "Google Sans Flex", var(--font-script);
+  --font-mono: "Google Sans Code", ui-monospace, "SF Mono", Menlo, var(--font-script);
   --leading: 1.75;
 }
 :root:is(:lang(ar), :lang(fa)) {
   --font-script: "SF Arabic", "Geeza Pro", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
-  --font-display: "Archivo", var(--font-script);
-  --font-body: "Archivo", var(--font-script);
-  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, var(--font-script);
+  --font-display: "Google Sans Flex", var(--font-script);
+  --font-body: "Google Sans Flex", var(--font-script);
+  --font-mono: "Google Sans Code", ui-monospace, "SF Mono", Menlo, var(--font-script);
   --leading: 1.8;
 }
 

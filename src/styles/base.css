@@ -12,7 +12,12 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(900px 520px at 0% -8%, var(--glow), transparent 70%),
+    radial-gradient(800px 480px at 100% 0%, var(--glow-2), transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
+  font-optical-sizing: auto;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 15px;

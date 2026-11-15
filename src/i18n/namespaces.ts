@@ -21,6 +21,7 @@ export const LAB_NAMESPACES = [
   "labs-wifi",
   "labs-rfid",
   "labs-ble",
+  "labs-sensors",
   "labs-sound",
 ] as const;
 

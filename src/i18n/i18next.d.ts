@@ -14,6 +14,7 @@ import type labsDisplay from "@/locales/en/labs-display.json";
 import type labsWifi from "@/locales/en/labs-wifi.json";
 import type labsRfid from "@/locales/en/labs-rfid.json";
 import type labsBle from "@/locales/en/labs-ble.json";
+import type labsSensors from "@/locales/en/labs-sensors.json";
 import type labsSound from "@/locales/en/labs-sound.json";
 import type chip from "@/locales/en/chip.json";
 
@@ -35,6 +36,7 @@ declare module "i18next" {
       "labs-wifi": typeof labsWifi;
       "labs-rfid": typeof labsRfid;
       "labs-ble": typeof labsBle;
+      "labs-sensors": typeof labsSensors;
       "labs-sound": typeof labsSound;
       chip: typeof chip;
     };

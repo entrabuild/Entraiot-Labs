@@ -8,6 +8,7 @@ import { bleLessons } from "./lessons/ble";
 import { displayLessons } from "./lessons/display";
 import { introLessons } from "./lessons/intro";
 import { rfidLessons } from "./lessons/rfid";
+import { sensorsLessons } from "./lessons/sensors";
 import { soundLessons } from "./lessons/sound";
 import { wifiLessons } from "./lessons/wifi";
 import { CHIP_TEXT, GLOSSARY_TEXT, LESSON_TEXT, TOUR_TEXT } from "./text-policies";
@@ -23,6 +24,7 @@ const CATALOGUES: readonly { name: string; source: unknown; policy: TextPolicy }
   { name: "lessons/wifi", source: wifiLessons, policy: LESSON_TEXT },
   { name: "lessons/rfid", source: rfidLessons, policy: LESSON_TEXT },
   { name: "lessons/ble", source: bleLessons, policy: LESSON_TEXT },
+  { name: "lessons/sensors", source: sensorsLessons, policy: LESSON_TEXT },
   { name: "lessons/sound", source: soundLessons, policy: LESSON_TEXT },
   { name: "glossary", source: { entries: GLOSSARY, topics: TOPIC_LABELS }, policy: GLOSSARY_TEXT },
   { name: "tours", source: TOURS, policy: TOUR_TEXT },

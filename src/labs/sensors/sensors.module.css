@@ -1,0 +1,147 @@
+.sim {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px 16px;
+}
+.control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.control input {
+  grid-column: 1 / -1;
+  accent-color: var(--copper);
+  width: 100%;
+}
+.control output {
+  grid-row: 1;
+  grid-column: 2;
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+/* The sensor readout, drawn like the bench's small TFT. */
+.screen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-m);
+  background: var(--scope-paper);
+  color: var(--scope-ink);
+}
+.tile {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: var(--radius-s);
+  background: var(--scope-dim);
+}
+.tile span {
+  font: 600 11px var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--scope-muted);
+}
+.tile b {
+  font: 700 22px var(--font-display);
+  color: var(--scope-trace);
+  font-variant-numeric: tabular-nums;
+}
+.mood b {
+  color: var(--scope-amber);
+}
+.level {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 500 13px var(--font-mono);
+  color: var(--scope-muted);
+}
+.level svg {
+  width: 110px;
+  height: 110px;
+  flex: none;
+}
+.ring {
+  fill: none;
+  stroke: var(--scope-grid);
+  stroke-width: 1.5;
+}
+.bubble {
+  fill: var(--scope-trace);
+  transition: cx 0.25s, cy 0.25s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bubble {
+    transition: none;
+  }
+}
+/* The I2C bus diagram */
+.bus {
+  display: block;
+  width: 100%;
+  min-width: 520px;
+  height: auto;
+}
+.board {
+  fill: var(--pcb);
+  stroke: var(--pcb-edge);
+}
+.boardText {
+  font: 700 14px var(--font-display);
+  fill: var(--silk);
+}
+.label {
+  font: 500 10.5px var(--font-mono);
+  fill: var(--muted);
+}
+.vcc,
+.sda,
+.scl,
+.gnd,
+.drop {
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.vcc {
+  stroke: var(--w-vcc);
+}
+.sda {
+  stroke: var(--w-sda);
+}
+.scl {
+  stroke: var(--w-scl);
+}
+.gnd {
+  stroke: var(--w-gnd);
+}
+.drop {
+  stroke: var(--line);
+  stroke-width: 2;
+}
+.tap {
+  fill: var(--ink);
+}
+.chip {
+  fill: var(--surface);
+  stroke: var(--copper);
+  stroke-width: 1.5;
+}
+.chipText {
+  font: 700 12px var(--font-mono);
+  fill: var(--ink);
+}
+.facts {
+  margin: 0;
+  padding-inline-start: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}

@@ -37,8 +37,7 @@ export const TRACKS: readonly Track[] = [
     title: "Sensors",
     blurb: "Temperature, air, motion over I2C",
     color: "--w-dc",
-    lessonIds: [],
-    planned: true,
+    lessonIds: ["E1", "E2", "E3", "E4"],
   },
   {
     id: "ble",

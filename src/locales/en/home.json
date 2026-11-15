@@ -1,7 +1,7 @@
 {
   "hero": {
     "kicker": "ESP32-S3 · N16R8 · bench guide",
-    "title": "ESP32 <part>Labs</part>",
+    "title": "ENTRAIOT <part>Labs</part>",
     "motto": {
       "wire": "Wire",
       "flash": "Flash",
@@ -57,7 +57,10 @@
       "ky037": "KY-037 analog microphone",
       "inmp441": "INMP441 I²S microphone",
       "amp": "MAX98357A amp + speaker",
-      "keyboard": "Bluetooth keyboard or mouse"
+      "keyboard": "Bluetooth keyboard or mouse",
+      "aht20": "AHT20 temperature & humidity sensor",
+      "bmp280": "BMP280 air pressure sensor",
+      "mpu6050": "MPU6050 motion sensor"
     }
   },
   "board": {

@@ -3,6 +3,7 @@ import { bleWidgets } from "@/labs/ble/widgets";
 import { displayWidgets } from "@/labs/display/widgets";
 import { introWidgets } from "@/labs/intro/widgets";
 import { rfidWidgets } from "@/labs/rfid/widgets";
+import { sensorsWidgets } from "@/labs/sensors/widgets";
 import { soundWidgets } from "@/labs/sound/widgets";
 import { wifiWidgets } from "@/labs/wifi/widgets";
 import { LESSON_PART } from "./icons";
@@ -44,6 +45,7 @@ describe("content", () => {
       wifiWidgets,
       rfidWidgets,
       bleWidgets,
+      sensorsWidgets,
       soundWidgets,
     ].flatMap((m) => Object.keys(m));
     expect(ids.length).toBe(new Set(ids).size);

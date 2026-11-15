@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} ساخته‌شده توسط <maker>{{maker}}</maker> · {{company}}"
   },
   "titles": {
-    "labs": "آزمایشگاه‌ها · راهنمای میز کار ESP32-S3",
-    "lesson": "{{id}} · {{title}} · راهنمای میز کار ESP32-S3",
-    "code": "کد {{id}} · {{title}} · راهنمای میز کار ESP32-S3",
-    "log": "گزارش میز کار · راهنمای میز کار ESP32-S3",
-    "parts": "کتابخانهٔ قطعات · راهنمای میز کار ESP32-S3",
-    "settings": "تنظیمات · راهنمای میز کار ESP32-S3",
-    "chip": "{{page}} · دیتاشیت · راهنمای میز کار ESP32-S3"
+    "labs": "آزمایشگاه‌ها · راهنمای میز کار ESP32-S3 · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · راهنمای میز کار ESP32-S3 · ENTRAIOT",
+    "code": "کد {{id}} · {{title}} · راهنمای میز کار ESP32-S3 · ENTRAIOT",
+    "log": "گزارش میز کار · راهنمای میز کار ESP32-S3 · ENTRAIOT",
+    "parts": "کتابخانهٔ قطعات · راهنمای میز کار ESP32-S3 · ENTRAIOT",
+    "settings": "تنظیمات · راهنمای میز کار ESP32-S3 · ENTRAIOT",
+    "chip": "{{page}} · دیتاشیت · راهنمای میز کار ESP32-S3 · ENTRAIOT"
   },
   "routeError": {
     "code": "خطا",

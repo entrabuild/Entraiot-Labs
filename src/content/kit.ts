@@ -18,6 +18,9 @@ export const KIT_ITEMS = [
   { id: "inmp441", part: "mic" },
   { id: "amp", part: "speaker" },
   { id: "keyboard", part: "keyboard" },
+  { id: "aht20", part: "sensor" },
+  { id: "bmp280", part: "sensor" },
+  { id: "mpu6050", part: "sensor" },
 ] as const satisfies readonly { id: string; part: PartName }[];
 
 export type KitItemId = (typeof KIT_ITEMS)[number]["id"];
@@ -43,6 +46,10 @@ export const LESSON_KIT: Readonly<Record<string, LessonKit<KitItemId>>> = {
   R6: { need: READER },
   R7: { need: [...READER, ["wifi"]] },
   R8: { need: [...READER, ["wifi"]] },
+  E1: { need: [["aht20"]] },
+  E2: { need: [["bmp280"]] },
+  E3: { need: [["mpu6050"]] },
+  E4: { need: [SCREEN, ["aht20"], ["bmp280"], ["mpu6050"]] },
   B1: { need: [SCREEN, ["phone"]], optional: ["button"] },
   B2: { need: [SCREEN, ["phone"]], optional: ["button"] },
   B3: { need: [SCREEN, ["phone"]], optional: ["button"] },

@@ -1,0 +1,131 @@
+// Lessons of the "sensors" track, added by ENTRAIOT Labs. Strings may carry the inline markup
+// RichText understands: <b>, <i>, <code> and <span class="snd-parts|need|opt">.
+// Every sensor shares one I2C bus: SDA on GPIO 1, SCL on GPIO 2 (right header, free pins).
+import type { LessonEntry, PinUse, WiringTable } from "@/domain/lesson";
+
+const I2C_PINS: readonly PinUse[] = [
+  { pin: "3V3", idx: 1, role: "VCC", side: "L", kind: "power" },
+  { pin: "GND", idx: 0, role: "GND", side: "R", kind: "gnd" },
+  { pin: "1", role: "SDA", side: "R" },
+  { pin: "2", role: "SCL", side: "R" },
+];
+
+const i2cWiring = (part: string): WiringTable => ({
+  head: [`${part} pin`, "ESP32-S3", "Role"],
+  rows: [
+    ["VIN / VCC", "3V3", "power (3.3 V, never 5 V)"],
+    ["GND", "GND", "ground"],
+    ["SDA", "GPIO 1", "I2C data"],
+    ["SCL", "GPIO 2", "I2C clock"],
+  ],
+});
+
+export const sensorsLessons = [
+  {
+    kind: "lesson",
+    id: "E1",
+    track: "sensors",
+    title: "Climate",
+    status: "simulator ready, firmware next",
+    heading: "Temperature and humidity",
+    goal: "Read an <b>AHT20</b> over I2C once a second and turn its raw 20-bit words into °C and % humidity, then work out the dew point.",
+    learn: ["I2C bus", "device address", "raw to real units", "dew point"],
+    pins: I2C_PINS,
+    cmd: "uv run pio run -d labs/E1-climate -e sensors-e1 -t upload -t monitor",
+    wiring: i2cWiring("AHT20"),
+    panels: [{ title: "How I2C shares two wires", widget: "i2cBus" }],
+    steps: [
+      "Unplug USB. Wire the AHT20 as in the table: four jumpers, VIN to <b>3V3</b>.",
+      "Run the command. The monitor starts with an I2C scan: you should see <code>0x38 (AHT20)</code>.",
+      "Every second a line shows <code>T=</code> and <code>RH=</code>.",
+      "Hold the sensor between two fingers: the temperature climbs within a few seconds.",
+      "Breathe on it gently: humidity jumps, then settles back.",
+    ],
+    note: "Scan finds nothing? Swap SDA and SCL, check 3V3 and GND. Temperature a few degrees high? The board warms the sensor: move it away on longer wires.",
+    preview: { widget: "sensorBench", view: 0 },
+  },
+  {
+    kind: "lesson",
+    id: "E2",
+    track: "sensors",
+    title: "Air pressure",
+    status: "simulator ready, firmware next",
+    heading: "Pressure and altitude",
+    goal: "Read a <b>BMP280</b>, show air pressure in hPa and turn it into height above sea level with the barometric formula.",
+    learn: ["barometric formula", "sea-level reference", "oversampling", "filtering noise"],
+    pins: I2C_PINS,
+    cmd: "uv run pio run -d labs/E2-pressure -e sensors-e2 -t upload -t monitor",
+    wiring: i2cWiring("BMP280"),
+    panels: [{ title: "How I2C shares two wires", widget: "i2cBus" }],
+    steps: [
+      "Wire the BMP280 as in the table. Its address is <code>0x76</code> (or <code>0x77</code> if SDO is tied high).",
+      "Run the command. Check the scan line, then watch <code>P=</code> and <code>alt=</code>.",
+      "Lift the board from the floor to above your head: altitude changes by about 2 m.",
+      "Type your local sea-level pressure from a weather site into <code>sea 1009.5</code> for a true altitude.",
+    ],
+    note: "Altitude drifts during the day: the weather changes the pressure too. Set the sea-level reference again, or use it only for differences.",
+    preview: { widget: "sensorBench", view: 1 },
+  },
+  {
+    kind: "lesson",
+    id: "E3",
+    track: "sensors",
+    title: "Motion",
+    status: "simulator ready, firmware next",
+    heading: "Tilt with an accelerometer",
+    goal: "Read the <b>MPU6050</b>'s three accelerometer axes and work out pitch and roll from gravity, like a spirit level.",
+    learn: ["accelerometer", "gravity vector", "atan2", "±2 g range"],
+    pins: I2C_PINS,
+    cmd: "uv run pio run -d labs/E3-motion -e sensors-e3 -t upload -t monitor",
+    wiring: i2cWiring("MPU6050"),
+    panels: [{ title: "How I2C shares two wires", widget: "i2cBus" }],
+    steps: [
+      "Wire the MPU6050 as in the table. The scan should show <code>0x68</code>.",
+      "Lay the board flat: <code>az</code> reads about 16384, which is 1 g.",
+      "Tilt it forward and back: pitch follows. Tilt it sideways: roll follows.",
+      "Shake it: the numbers jump, because the sensor feels your hand as well as gravity.",
+    ],
+    note: "Pitch and roll from the accelerometer are only right when the board is still. For smooth angles while moving, the next step is to blend in the gyroscope.",
+    preview: { widget: "sensorBench", view: 2 },
+  },
+  {
+    kind: "lesson",
+    id: "E4",
+    track: "sensors",
+    title: "Weather station",
+    status: "simulator ready, firmware next",
+    heading: "All three on one bus, on the screen",
+    goal: "Put the AHT20, BMP280 and MPU6050 on the same two I2C wires and show a live weather station on the 1.9″ screen, with a comfort word for the room.",
+    learn: ["many devices on one bus", "reading in turn", "screen layout", "comfort rules"],
+    pins: [
+      ...I2C_PINS,
+      { pin: "7", role: "BLK", side: "L" },
+      { pin: "8", role: "RES", side: "L" },
+      { pin: "9", role: "DC", side: "L" },
+      { pin: "10", role: "CS", side: "L" },
+      { pin: "11", role: "SDA", side: "L" },
+      { pin: "12", role: "SCL", side: "L" },
+    ],
+    cmd: "uv run pio run -d labs/E4-station -e sensors-e4 -t upload -t monitor",
+    wiring: {
+      title: "Sensors: all three on the same four wires",
+      head: ["Sensor pin", "ESP32-S3", "Role"],
+      rows: [
+        ["VIN / VCC (all three)", "3V3", "power"],
+        ["GND (all three)", "GND", "ground"],
+        ["SDA (all three)", "GPIO 1", "I2C data"],
+        ["SCL (all three)", "GPIO 2", "I2C clock"],
+      ],
+    },
+    panels: [{ title: "How I2C shares two wires", widget: "i2cBus" }],
+    steps: [
+      "Keep the screen wired as in lesson 03.",
+      "Join the three sensors' VIN, GND, SDA and SCL together (a small breadboard helps), then to the board.",
+      "Run the command. The scan must list <code>0x38</code>, <code>0x68</code> and <code>0x76</code>.",
+      "The screen shows temperature, humidity, pressure, tilt and a comfort word.",
+      "Warm or breathe on the AHT20 and watch the comfort word change.",
+    ],
+    note: "One sensor missing from the scan? Unplug the others and test it alone: a wrong wire on one board can hold the whole bus down.",
+    preview: { widget: "sensorBench", view: 3 },
+  },
+] as const satisfies readonly LessonEntry[];

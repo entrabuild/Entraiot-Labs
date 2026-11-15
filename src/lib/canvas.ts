@@ -22,8 +22,8 @@ export type ScopePalette = ReturnType<typeof scopePalette>;
 export const SCREEN_W = 320;
 export const SCREEN_H = 170;
 
-export const MONO_FONT = "'IBM Plex Mono', monospace";
-export const DISPLAY_FONT = "Archivo, sans-serif";
+export const MONO_FONT = "'Google Sans Code', monospace";
+export const DISPLAY_FONT = "'Google Sans Flex', sans-serif";
 
 /** Draws text in one call: font, colour and alignment, then restores left alignment. */
 export function drawText(

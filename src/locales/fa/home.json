@@ -1,7 +1,7 @@
 {
   "hero": {
     "kicker": "ESP32-S3 · N16R8 · راهنمای میز کار",
-    "title": "ESP32 <part>آزمایشگاه‌ها</part>",
+    "title": "ENTRAIOT <part>Labs</part>",
     "motto": {
       "wire": "سیم‌کشی کن",
       "flash": "فلش کن",
@@ -106,4 +106,3 @@
     "loading": "در حال بارگذاری…"
   }
 }
-

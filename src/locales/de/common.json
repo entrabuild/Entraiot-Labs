@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} Erstellt von <maker>{{maker}}</maker> · {{company}}"
   },
   "titles": {
-    "labs": "Labs · ESP32-S3 Bench Guide",
-    "lesson": "{{id}} · {{title}} · ESP32-S3 Bench Guide",
-    "code": "{{id}}-Code · {{title}} · ESP32-S3 Bench Guide",
-    "log": "Bench-Log · ESP32-S3 Bench Guide",
-    "parts": "Bauteil-Bibliothek · ESP32-S3 Bench Guide",
-    "settings": "Einstellungen · ESP32-S3 Bench Guide",
-    "chip": "{{page}} · Datenblatt · ESP32-S3 Bench Guide"
+    "labs": "Labs · ESP32-S3 Bench Guide · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · ESP32-S3 Bench Guide · ENTRAIOT",
+    "code": "{{id}}-Code · {{title}} · ESP32-S3 Bench Guide · ENTRAIOT",
+    "log": "Bench-Log · ESP32-S3 Bench Guide · ENTRAIOT",
+    "parts": "Bauteil-Bibliothek · ESP32-S3 Bench Guide · ENTRAIOT",
+    "settings": "Einstellungen · ESP32-S3 Bench Guide · ENTRAIOT",
+    "chip": "{{page}} · Datenblatt · ESP32-S3 Bench Guide · ENTRAIOT"
   },
   "routeError": {
     "code": "Fehler",

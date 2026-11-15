@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} 由 <maker>{{maker}}</maker> 制作 · {{company}}"
   },
   "titles": {
-    "labs": "实验 · ESP32-S3 工作台指南",
-    "lesson": "{{id}} · {{title}} · ESP32-S3 工作台指南",
-    "code": "{{id}} 代码 · {{title}} · ESP32-S3 工作台指南",
-    "log": "工作台日志 · ESP32-S3 工作台指南",
-    "parts": "元件库 · ESP32-S3 工作台指南",
-    "settings": "设置 · ESP32-S3 工作台指南",
-    "chip": "{{page}} · 数据手册 · ESP32-S3 工作台指南"
+    "labs": "实验 · ESP32-S3 工作台指南 · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · ESP32-S3 工作台指南 · ENTRAIOT",
+    "code": "{{id}} 代码 · {{title}} · ESP32-S3 工作台指南 · ENTRAIOT",
+    "log": "工作台日志 · ESP32-S3 工作台指南 · ENTRAIOT",
+    "parts": "元件库 · ESP32-S3 工作台指南 · ENTRAIOT",
+    "settings": "设置 · ESP32-S3 工作台指南 · ENTRAIOT",
+    "chip": "{{page}} · 数据手册 · ESP32-S3 工作台指南 · ENTRAIOT"
   },
   "routeError": {
     "code": "错误",

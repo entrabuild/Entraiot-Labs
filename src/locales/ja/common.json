@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} 制作: <maker>{{maker}}</maker> · {{company}}"
   },
   "titles": {
-    "labs": "ラボ · ESP32-S3 ベンチガイド",
-    "lesson": "{{id}} · {{title}} · ESP32-S3 ベンチガイド",
-    "code": "{{id}} コード · {{title}} · ESP32-S3 ベンチガイド",
-    "log": "ベンチログ · ESP32-S3 ベンチガイド",
-    "parts": "パーツライブラリ · ESP32-S3 ベンチガイド",
-    "settings": "設定 · ESP32-S3 ベンチガイド",
-    "chip": "{{page}} · データシート · ESP32-S3 ベンチガイド"
+    "labs": "ラボ · ESP32-S3 ベンチガイド · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · ESP32-S3 ベンチガイド · ENTRAIOT",
+    "code": "{{id}} コード · {{title}} · ESP32-S3 ベンチガイド · ENTRAIOT",
+    "log": "ベンチログ · ESP32-S3 ベンチガイド · ENTRAIOT",
+    "parts": "パーツライブラリ · ESP32-S3 ベンチガイド · ENTRAIOT",
+    "settings": "設定 · ESP32-S3 ベンチガイド · ENTRAIOT",
+    "chip": "{{page}} · データシート · ESP32-S3 ベンチガイド · ENTRAIOT"
   },
   "routeError": {
     "code": "エラー",

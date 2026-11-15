@@ -2,6 +2,7 @@
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
   padding: 14px;
   min-width: 0;
 }

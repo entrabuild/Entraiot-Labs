@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} Créé par <maker>{{maker}}</maker> · {{company}}"
   },
   "titles": {
-    "labs": "Labos · Guide d'établi ESP32-S3",
-    "lesson": "{{id}} · {{title}} · Guide d'établi ESP32-S3",
-    "code": "Code {{id}} · {{title}} · Guide d'établi ESP32-S3",
-    "log": "Journal de l'établi · Guide d'établi ESP32-S3",
-    "parts": "Bibliothèque de pièces · Guide d'établi ESP32-S3",
-    "settings": "Réglages · Guide d'établi ESP32-S3",
-    "chip": "{{page}} · Fiche technique · Guide d'établi ESP32-S3"
+    "labs": "Labos · Guide d'établi ESP32-S3 · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · Guide d'établi ESP32-S3 · ENTRAIOT",
+    "code": "Code {{id}} · {{title}} · Guide d'établi ESP32-S3 · ENTRAIOT",
+    "log": "Journal de l'établi · Guide d'établi ESP32-S3 · ENTRAIOT",
+    "parts": "Bibliothèque de pièces · Guide d'établi ESP32-S3 · ENTRAIOT",
+    "settings": "Réglages · Guide d'établi ESP32-S3 · ENTRAIOT",
+    "chip": "{{page}} · Fiche technique · Guide d'établi ESP32-S3 · ENTRAIOT"
   },
   "routeError": {
     "code": "Erreur",

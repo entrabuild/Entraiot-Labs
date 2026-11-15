@@ -5,7 +5,7 @@ import { levelTone } from "../model/level";
 export const mono = (px: number, bold = false) => `${bold ? "bold " : ""}${px}px ${MONO_FONT}`;
 export const display = (px: number, bold = true) => `${bold ? "bold " : ""}${px}px ${DISPLAY_FONT}`;
 
-/** The screen's two fonts: 8 px mono for small print, 12 px bold Archivo for values. */
+/** The screen's two fonts: 8 px mono for small print, 12 px bold Google Sans Flex for values. */
 export const S8 = mono(8);
 export const B12 = display(12);
 

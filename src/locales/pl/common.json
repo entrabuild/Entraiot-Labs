@@ -27,13 +27,13 @@
     "createdBy": "© {{year}} Stworzone przez <maker>{{maker}}</maker> · {{company}}"
   },
   "titles": {
-    "labs": "Ćwiczenia · Przewodnik stanowiskowy ESP32-S3",
-    "lesson": "{{id}} · {{title}} · Przewodnik stanowiskowy ESP32-S3",
-    "code": "{{id}} kod · {{title}} · Przewodnik stanowiskowy ESP32-S3",
-    "log": "Dziennik stanowiska · Przewodnik stanowiskowy ESP32-S3",
-    "parts": "Biblioteka części · Przewodnik stanowiskowy ESP32-S3",
-    "settings": "Ustawienia · Przewodnik stanowiskowy ESP32-S3",
-    "chip": "{{page}} · Nota katalogowa · Przewodnik stanowiskowy ESP32-S3"
+    "labs": "Ćwiczenia · Przewodnik stanowiskowy ESP32-S3 · ENTRAIOT",
+    "lesson": "{{id}} · {{title}} · Przewodnik stanowiskowy ESP32-S3 · ENTRAIOT",
+    "code": "{{id}} kod · {{title}} · Przewodnik stanowiskowy ESP32-S3 · ENTRAIOT",
+    "log": "Dziennik stanowiska · Przewodnik stanowiskowy ESP32-S3 · ENTRAIOT",
+    "parts": "Biblioteka części · Przewodnik stanowiskowy ESP32-S3 · ENTRAIOT",
+    "settings": "Ustawienia · Przewodnik stanowiskowy ESP32-S3 · ENTRAIOT",
+    "chip": "{{page}} · Nota katalogowa · Przewodnik stanowiskowy ESP32-S3 · ENTRAIOT"
   },
   "routeError": {
     "code": "Błąd",

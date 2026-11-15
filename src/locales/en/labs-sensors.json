@@ -1,0 +1,40 @@
+{
+  "controls": {
+    "label": "The room around the sensors",
+    "temp": "Room temperature",
+    "hum": "Humidity",
+    "alt": "Height above sea level",
+    "pitch": "Tilt forward / back",
+    "roll": "Tilt left / right"
+  },
+  "read": {
+    "temp": "Temperature",
+    "hum": "Humidity",
+    "dew": "Dew point",
+    "pressure": "Air pressure",
+    "altitude": "Altitude",
+    "comfort": "Comfort",
+    "level": "Bubble level: pitch {{pitch}}°, roll {{roll}}°",
+    "pitchRoll": "pitch {{pitch}}° · roll {{roll}}°"
+  },
+  "comfort": {
+    "cold": "Too cold",
+    "hot": "Too hot",
+    "dry": "Too dry",
+    "humid": "Too humid",
+    "ok": "Comfortable"
+  },
+  "caption": {
+    "v0": "Move the sliders like warming the sensor in your hand or breathing on it: the AHT20 follows within a second.",
+    "v1": "Climb the slider: pressure falls about 12 hPa for every 100 m, so the BMP280 can tell which floor you are on.",
+    "v2": "Tilt the board: the MPU6050 feels gravity on three axes and the bubble level shows the angle the firmware works out.",
+    "v3": "All three sensors share the same two wires. The station reads them in turn and sums the room up in one word."
+  },
+  "bus": {
+    "diagram": "I2C bus: the ESP32-S3 and three sensors sharing 3V3, SDA, SCL and GND, each sensor with its own address",
+    "pullups": "SDA and SCL need pull-up resistors (most sensor boards have them built in)",
+    "fact1": "Two signal wires for every sensor: SDA carries the data, SCL the clock the ESP32-S3 sets.",
+    "fact2": "Each sensor answers only to its own address, so many can share the bus.",
+    "fact3": "An I2C scan at start-up lists who is there: the quickest way to find a loose wire."
+  }
+}
