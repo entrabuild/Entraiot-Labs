@@ -20,7 +20,7 @@
 ![Languages](https://img.shields.io/badge/Languages-12-f59e0b)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 
-<img src="docs/media/lesson-simulator.gif" alt="A lesson: ticking off steps, then typing commands into the simulated serial monitor while the simulated LED responds" width="820">
+<img src="docs/media/home-dark.png" alt="ENTRAIOT Labs home page in dark mode: the ENTRAIOT LABS title, labs progress, the continue card and the parts finder" width="820">
 
 </div>
 
@@ -82,14 +82,16 @@ It is built for the **ESP32-S3 DevKitC-1 (N16R8)**, works on a phone, works offl
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/media/code-reader.gif" alt="The code reader: tour stops, quizzes and new-word cards"></td>
-    <td width="50%"><img src="docs/media/datasheet.gif" alt="The datasheet section: chip overview, pins, peripheral atlas and reference reader"></td>
+    <td width="50%"><img src="docs/media/lesson-e4.png" alt="Lesson E4 Weather station: the theme bar with Sensors, the lesson trace, the live pinout and the goal"></td>
+    <td width="50%"><img src="docs/media/sensors-simulator.png" alt="The E4 simulator: sliders for the room, readings for temperature, humidity, dew point, pressure, altitude, a bubble level and the serial monitor"></td>
   </tr>
   <tr>
-    <td width="50%"><img src="docs/media/languages.gif" alt="Switching languages, including the right-to-left layout"></td>
-    <td width="50%"><img src="docs/media/phone-dark.gif" alt="The guide on a phone in dark mode"></td>
+    <td width="50%"><img src="docs/media/datasheet.png" alt="The datasheet section: Inside the ESP32-S3 with key numbers and cited facts"></td>
+    <td width="50%"><img src="docs/media/home-light.png" alt="ENTRAIOT Labs home page in light mode"></td>
   </tr>
 </table>
+
+<p align="center"><img src="docs/media/phone-motion.png" alt="Lesson E3 Motion on a phone: tilt sliders, the bubble level and the serial monitor" width="300"></p>
 
 ---
 
